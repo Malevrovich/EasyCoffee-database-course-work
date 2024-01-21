@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyCashier</title>
+    <link rel="stylesheet" href="cashier.css">
+    <link rel="stylesheet" href="../common.css">
+</head>
+
+<body>
+    <dialog id="add-to-stoplist-dialog">
+        <div class="dialog-content">
+            <p>
+                Do you want to add
+            </p>
+            <h1>
+                Item name
+            </h1>
+            <p>
+                to stoplist.<br /> By reason:
+            </p>
+            <input type="text" placeholder="reason" id="add-to-stoplist-reason-input">
+            <div id="add-to-stoplist-btns">
+                <button id="add-to-stoplist-add-btn">Add</button>
+                <button id="add-to-stoplist-cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+    <dialog id="remove-from-stoplist-dialog">
+        <div class="dialog-content">
+            <p>
+                Do you want to remove
+            </p>
+            <h1>
+                Item name
+            </h1>
+            <p>
+                from stoplist?
+            </p>
+            <div id="remove-from-stoplist-btns">
+                <button id="remove-from-stoplist-remove-btn">Remove</button>
+                <button id="remove-from-stoplist-cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+    <dialog id="stoplist-dialog">
+        <div class="dialog-content">
+            <div id="stoplist-items">
+            </div>
+            <button id="stoplist-dialog-close-btn">
+                Ok
+            </button>
+        </div>
+    </dialog>
+    <dialog id="item-dialog">
+        <div class="dialog-content">
+            <h1 id="item-dialog-name">Item name</h1>
+            <p id="item-dialog-description">Item description Item description Item description Item description Item
+                description Item description
+                Item description Item description Item description</p>
+            <div id="item-dialog-actions">
+                <button id="item-dialog-add-btn">Add</button>
+                <button id="item-dialog-close-btn">Close</button>
+                <button id="item-dialog-add-to-stoplist-btn">To stoplist</button>
+            </div>
+        </div>
+    </dialog>
+    <dialog id="cancel-order-dialog">
+        <div class="dialog-content">
+            <h1>Choose order to cancel</h1>
+            <div id="cancel-order-items">
+            </div>
+            <button id="cancel-order-dialog-close-btn">Close</button>
+    </dialog>
+    <div class="content">
+        <header class="main-block">
+            <div class="dropdown" id="account-info">
+                <div class="dropdown-header">
+                    <p>Cashier</p>
+                </div>
+                <div class="dropdown-content">
+                    <button class="dropbtn" id="logout-btn">Log out</button>
+                </div>
+            </div>
+            <div class="dropdown" id="header-dropdown">
+                <div class="dropdown-header">
+                    <p>Menu</p>
+                </div>
+                <div class="dropdown-content">
+                    <button class="dropbtn" id="stoplist-btn">Stop List</button>
+                    <button class="dropbtn" id="cancel-order-btn">Cancel Order</button>
+                </div>
+            </div>
+        </header>
+        <div class="main-block items-grid" id="items">
+        </div>
+        <div class="main-block" id="order">
+            <div id="order-content">
+                <div id="order-items">
+                </div>
+                <div id="order-sum">
+                    <h1>Total: 0$</h1>
+                </div>
+                <div id="order-actions">
+                    <button id="post-order-btn" class="orderbtn">Post order!</button>
+                    <button id="clear-order-btn" class="orderbtn">Clear order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="cashier.js"></script>
+</body>
+
+</html>

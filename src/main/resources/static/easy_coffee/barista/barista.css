@@ -1,0 +1,81 @@
+#orders {
+    grid-column: 1/3;
+    grid-row: 2;
+}
+
+
+.orders-grid {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 40vh;
+    gap: 5px;
+    justify-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: 0;
+}
+
+.orders-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.order {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-height: 100%;
+}
+
+
+.grid-order {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    white-space: nowrap;
+    background-color: #5fd1a5;
+    text-overflow: clip;
+}
+
+.order-items {
+    overflow-y: scroll;
+    scrollbar-width: 0;
+}
+
+.order-items::-webkit-scrollbar {
+    display: none;
+}
+
+.grid-order:hover {
+    background-color: #4aa07f;
+}
+
+.order-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: medium;
+    max-width: 100%;
+}
+
+.order-item-name {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    width: 70%;
+}
+
+.order-item-check {
+    width: 20px;
+    height: 20px;
+}
+
+.order-order-id {
+    font-size: larger;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,240 @@
+#items {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#order {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.items-grid {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 30vh;
+    gap: 5px;
+    justify-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: 0;
+}
+
+.items-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.item {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.grid-item {
+    box-sizing: border-box;
+    height: 30vh;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    white-space: nowrap;
+    background-color: #5fd1a5;
+    text-overflow: clip;
+}
+
+.grid-item:hover {
+    background-color: #4aa07f;
+}
+
+#order-content {
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+}
+
+#order-items {
+    box-sizing: border-box;
+    padding: 10px;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 10vh;
+    gap: 5px;
+    overflow-y: scroll;
+    scrollbar-width: 0;
+}
+
+#order-items::-webkit-scrollbar {
+    display: none;
+}
+
+.order-item,
+.orders-history-item-item {
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    background-color: #eafaff;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.order-item-header {
+    width: 15vw;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
+.item {
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.grid-header {
+    max-width: 100%;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
+.amount {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.amountbtn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.order-delete-btn {
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+#order-sum {
+    margin-top: auto;
+}
+
+#order-actions {
+    min-height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.orderbtn {
+    height: 80px;
+    width: 100%;
+}
+
+#stoplist-items {
+    max-width: 50vw;
+    max-height: 40vh;
+    box-sizing: border-box;
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-y: scroll;
+    scrollbar-width: 0;
+}
+
+#stoplist-items::-webkit-scrollbar {
+    display: none;
+}
+
+#stoplist-dialog-close-btn {
+    min-height: 50px;
+}
+
+.stoplist-item {
+    width: 20vw;
+    border-bottom: 5px solid;
+}
+
+#item-dialog {
+    width: 50vw;
+}
+
+#item-dialog-description {
+    margin: 10px;
+}
+
+#item-dialog-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+#item-dialog-actions button {
+    height: 50px;
+    width: 100%;
+}
+
+#cancel-order-items {
+    display: flex;
+    flex-direction: column;
+    max-height: 40vh;
+    overflow-y: scroll;
+}
+
+.cancel-order-item {
+    min-height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 5px solid;
+}
+
+.cancel-order-item:hover,
+.stoplist-item:hover {
+    background-color: gray;
+}
+
+#cancel-order-dialog-close-btn {
+    height: 50px;
+}
+
+#add-to-stoplist-btns,
+#remove-from-stoplist-btns,
+#delete-item-btns {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+#add-to-stoplist-add-btn,
+#add-to-stoplist-cancel-btn,
+#remove-from-stoplist-remove-btn,
+#remove-from-stoplist-cancel-btn,
+#delete-item-delete-btn,
+#delete-item-cancel-btn {
+    width: 100%;
+    height: 30px;
+}
+
+#add-to-stoplist-dialog,
+#remove-from-stoplist-dialog,
+#delete-item-dialog {
+    text-align: center;
+    font-size: large;
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyAdmin</title>
+    <link rel="stylesheet" href="../cashier/cashier.css">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <dialog id="orders-history-dialog">
+        <div class="dialog-content">
+            <h1>Orders history</h1>
+            <ul id="orders-history-items">
+                <li>
+                    <div class="orders-history-item">
+                        <div class="orders-histoty-item-headers">
+                            <p>Time</p>
+                            <p>Status</p>
+                        </div>
+                        <ul class="orders-history-item-items">
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <button id="orders-history-ok-btn">Ok</button>
+        </div>
+    </dialog>
+    <dialog id="ingredient-history-dialog">
+        <div class="dialog-content">
+            <h1>Ingredient history</h1>
+            <ul id="ingredient-history-items">
+
+            </ul>
+            <button id="ingredient-history-ok-btn">Ok</button>
+        </div>
+    </dialog>
+    <dialog id="ingredient-dialog">
+        <div class="dialog-content">
+            <h1>Ingredient</h1>
+            <h2>Amount: </h2>
+            <div id="ingredient-increase-block">
+                <h2>Increase by:</h2>
+                <input id="ingredient-increase-input" type="number" step="0.01" placeholder="increase" />
+            </div>
+
+            <select id="ingredient-reason-input">
+                <option value="reason">Reason</option>
+            </select>
+
+            <div id="ingredient-actions">
+                <button id="ingredient-change-amount-btn">Change amount</button>
+                <button id="ingredient-close-btn">Close</button>
+            </div>
+        </div>
+    </dialog>
+    <dialog id="add-to-stoplist-dialog">
+        <div class="dialog-content">
+            <p>
+                Do you want to add
+            </p>
+            <h1>
+                Item name
+            </h1>
+            <p>
+                to stoplist.<br /> By reason:
+            </p>
+            <input type="text" placeholder="reason" id="add-to-stoplist-reason-input">
+            <div id="add-to-stoplist-btns">
+                <button id="add-to-stoplist-add-btn">Add</button>
+                <button id="add-to-stoplist-cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+    <dialog id="remove-from-stoplist-dialog">
+        <div class="dialog-content">
+            <p>
+                Do you want to remove
+            </p>
+            <h1>
+                Item name
+            </h1>
+            <p>
+                from stoplist?
+            </p>
+            <div id="remove-from-stoplist-btns">
+                <button id="remove-from-stoplist-remove-btn">Remove</button>
+                <button id="remove-from-stoplist-cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+    <dialog id="stoplist-dialog">
+        <div class="dialog-content">
+            <div id="stoplist-items">
+            </div>
+            <button id="stoplist-dialog-close-btn">
+                Ok
+            </button>
+        </div>
+    </dialog>
+    <dialog id="item-dialog">
+        <div class="dialog-content">
+            <h1 id="item-dialog-name">Item name</h1>
+            <p id="item-dialog-description">Item description Item description Item description Item description Item
+                description Item description
+                Item description Item description Item description</p>
+            <div id="item-dialog-actions">
+                <button id="item-dialog-add-btn">Add</button>
+                <button id="item-dialog-close-btn">Close</button>
+                <button id="item-dialog-add-to-stoplist-btn">To stoplist</button>
+            </div>
+        </div>
+    </dialog>
+    <dialog id="cancel-order-dialog">
+        <div class="dialog-content">
+            <h1>Choose order to cancel</h1>
+            <div id="cancel-order-items">
+                <div class="cancel-order-item">
+                    <p>Current date</p>
+                </div>
+            </div>
+            <button id="cancel-order-dialog-close-btn">Close</button>
+    </dialog>
+    <dialog id="add-item-dialog">
+        <div class="dialog-content">
+            <form id="add-item-form">
+                <label id="add-item-label-name">Name: <input type="text" name="item-name" id="add-item-input-name"
+                        required></label>
+                <label id="add-item-label-description">Description: <textarea type="text" name="item-description"
+                        id="add-item-input-description"></textarea></label>
+                <label id="add-item-label-cost">Cost: <input type="number" name="item-cost" id="add-item-input-cost"
+                        min="0" required></label>
+                <h1 id="add-item-ingredients-header">Ingredients:</h1>
+                <div id="add-item-ingredients">
+                </div>
+                <button type="button" name="add-ingredient-button" id="add-item-add-ingredient-btn">Add
+                    ingredient</button>
+                <button type="button" id="add-item-submit-btn">Add item!</button>
+            </form>
+            <button id="add-item-dialog-close-btn">Close</button>
+        </div>
+    </dialog>
+    <dialog id="remove-item-dialog">
+        <div class="dialog-content">
+            <div id="remove-items-list">
+                <div class="remove-item-item">
+                    <h1>Americano</h1>
+                </div>
+                <div class="remove-item-item">
+                    <h1>Strawberry Cheesecake</h1>
+                </div>
+            </div>
+            <button id="stoplist-dialog-close-btn">
+                Ok
+            </button>
+        </div>
+    </dialog>
+    <dialog id="create-ingredient-dialog">
+        <div class="dialog-content">
+            <h1>Create ingredient</h1>
+            <div class="input-field">
+                <h2>Name: </h2>
+                <input id="create-ingredient-name-input" type="text" placeholder="Name" />
+            </div>
+            <div class="input-field">
+                <h2>Initial amount: </h2>
+                <input id="create-ingredient-amount-input" type="number" step="0.01" min="0" placeholder="Amount" />
+            </div>
+            <div class="input-field">
+                <h2>Units: </h2>
+                <select id="create-ingredient-units-input">
+                    <option value="1">gramms</option>
+                </select>
+            </div>
+            <div id="create-ingredient-actions">
+                <button id="create-ingredient-create-btn">Create</button>
+                <button id="create-ingredient-cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+    <dialog id="ingredient-list-dialog">
+        <div class="dialog-content">
+            <h1>Select ingredient</h1>
+            <div id="ingredient-list-items">
+                <div class="ingredient-list-item">
+                    <p>Ingredient name 1</p>
+                </div>
+                <div class="ingredient-list-item">
+                    <p>Ingredient name 2</p>
+                </div>
+                <div class="ingredient-list-item">
+                    <p>Ingredient name 3</p>
+                </div>
+            </div>
+            <button id="ingredient-list-dialog-close-btn">Close</button>
+        </div>
+    </dialog>
+    <div class="content">
+        <header class="main-block">
+            <div class="dropdown" id="account-info">
+                <div class="dropdown-header">
+                    <p>Admin</p>
+                </div>
+                <div class="dropdown-content">
+                    <button class="dropbtn" id="logout-btn">Log out</button>
+                </div>
+            </div>
+            <div class="dropdown" id="header-dropdown">
+                <div class="dropdown-header">
+                    <p>Menu</p>
+                </div>
+                <div class="dropdown-content">
+                    <button class="dropbtn" id="ingredients-btn">Ingredients</button>
+                    <button class="dropbtn" id="stoplist-btn">Stop List</button>
+                    <button class="dropbtn" id="cancel-order-btn">Cancel Order</button>
+                    <button class="dropbtn" id="add-item-btn">Add item</button>
+                    <button class="dropbtn" id="create-ingredient-btn">Create ingredient</button>
+                    <button class="dropbtn" id="ingredient-history-btn">Ingredient history</button>
+                    <button class="dropbtn" id="orders-history-btn">Orders history</button>
+                </div>
+            </div>
+        </header>
+        <div class="main-block items-grid" id="items">
+        </div>
+        <div class="main-block" id="order">
+            <div id="order-content">
+                <div id="order-items">
+                </div>
+                <div id="order-sum">
+                    <h1>Total: 0$</h1>
+                </div>
+                <div id="order-actions">
+                    <button id="post-order-btn" class="orderbtn">Post order!</button>
+                    <button id="clear-order-btn" class="orderbtn">Clear order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../cashier/cashier.js"></script>
+    <script src="../common.js"></script>
+    <script src="../barista/with_admin.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>

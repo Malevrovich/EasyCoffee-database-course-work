@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyBarista</title>
+
+    <link rel="stylesheet" href="barista.css">
+    <link rel="stylesheet" href="../common.css">
+</head>
+
+<body>
+    <dialog id="create-ingredient-dialog">
+        <div class="dialog-content">
+            <h1>Create ingredient</h1>
+            <div class="input-field">
+                <h2>Name: </h2>
+                <input id="create-ingredient-name-input" type="text" placeholder="Name" />
+            </div>
+            <div class="input-field">
+                <h2>Initial amount: </h2>
+                <input id="create-ingredient-amount-input" type="number" step="0.01" min="0" placeholder="Amount" />
+            </div>
+            <div class="input-field">
+                <h2>Units: </h2>
+                <select id="create-ingredient-units-input">
+                    <option value="1">gramms</option>
+                </select>
+            </div>
+            <div id="create-ingredient-actions">
+                <button id="create-ingredient-create-btn">Create</button>
+                <button id="create-ingredient-cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+    <dialog id="ingredient-dialog">
+        <div class="dialog-content">
+            <h1>Ingredient</h1>
+            <h2>Amount: </h2>
+            <div id="ingredient-increase-block">
+                <h2>Increase by:</h2>
+                <input id="ingredient-increase-input" type="number" step="0.01" placeholder="increase" />
+            </div>
+
+            <select id="ingredient-reason-input">
+                <option value="reason">Reason</option>
+            </select>
+
+            <div id="ingredient-actions">
+                <button id="ingredient-change-amount-btn">Change amount</button>
+                <button id="ingredient-close-btn">Close</button>
+            </div>
+        </div>
+    </dialog>
+    <dialog id="order-dialog">
+        <div class="dialog-content">
+            <h1>Order</h1>
+            <h2 id="order-dialog-time">Order date</h2>
+            <div id="order-dialog-items">
+            </div>
+            <div class="order-dialog-actions">
+                <button id="order-dialog-close-order-btn">Close order</button>
+                <button id="order-dialog-cancel-order-btn">Cancel order</button>
+                <button id="order-dialog-close-btn">Close</button>
+            </div>
+        </div>
+    </dialog>
+    <dialog id="ingredient-list-dialog">
+        <div class="dialog-content">
+            <h1>Select ingredient</h1>
+            <div id="ingredient-list-items">
+            </div>
+            <button id="ingredient-list-dialog-close-btn">Close</button>
+        </div>
+    </dialog>
+    <div class="content">
+        <header class="main-block">
+            <div class="dropdown" id="account-info">
+                <div class="dropdown-header">
+                    <p>Barista</p>
+                </div>
+                <div class="dropdown-content">
+                    <button class="dropbtn" id="logout-btn">Log out</button>
+                </div>
+            </div>
+            <div class="dropdown" id="header-dropdown">
+                <div class="dropdown-header">
+                    <p>Menu</p>
+                </div>
+                <div class="dropdown-content">
+                    <button class="dropbtn" id="ingredients-btn">Ingredients</button>
+                    <button class="dropbtn" id="create-ingredient-btn">Create ingredient</button>
+                </div>
+            </div>
+        </header>
+        <div class="main-block orders-grid" id="orders">
+            <div class="grid-order">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="../common.js"></script>
+    <script type="text/javascript" src="barista.js"></script>
+    <script type="text/javascript" src="with_admin.js"></script>
+</body>
+
+</html>
